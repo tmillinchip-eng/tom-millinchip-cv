@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom Millinchip - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .header .title {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .contact-info {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            font-weight: 600;
+        }
+        
+        .professional-summary {
+            font-size: 1rem;
+            text-align: justify;
+            color: #555;
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: #3498db;
+            border-radius: 50%;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .job-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+        
+        .job-dates {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+        
+        .company {
+            font-weight: 500;
+            color: #34495e;
+            margin-bottom: 8px;
+        }
+        
+        .job-description {
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        .job-responsibilities {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .job-responsibilities li {
+            padding: 3px 0;
+            position: relative;
+            padding-left: 15px;
+            color: #555;
+        }
+        
+        .job-responsibilities li::before {
+            content: '•';
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .skill-category h3 {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .skill-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .skill-list li {
+            padding: 3px 0;
+            color: #555;
+        }
+        
+        .achievements-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .achievements-list li {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .achievement-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .qualifications-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .qualifications-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .qual-name {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        .qual-detail {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .interests-text {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .cv-container {
+                margin: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="header">
+            <h1>TOM MILLINCHIP</h1>
+            <div class="title">Deputy Head Academic | AI in Education & Curriculum Specialist</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>✉</span>
+                    <span>tmillinchip@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+1 242 8240806</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Nassau, Bahamas</span>
+                </div>
+                <div class="contact-item">
+                    <span>💼</span>
+                    <span>linkedin.com/in/tom-millinchip-19460856</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Professional Summary</h2>
+                <div class="professional-summary">
+                    A forward-thinking educational leader with 15 years of experience in UK and international schools. Proven expertise in driving academic excellence through innovative curriculum design, data-informed assessment, and the strategic integration of technology. Currently pioneering AI literacy initiatives to prepare students and staff for the future of learning and authoring a book on AI in primary education with a well-known publisher, further establishing expertise in this rapidly evolving field. Seeking senior leadership or consultancy roles to leverage skills in curriculum transformation and educational technology to create outstanding learning environments.
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Core Competencies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Leadership & Strategy</h3>
+                        <ul class="skill-list">
+                            <li>Strategic Planning & Change Management</li>
+                            <li>Team Leadership & Coaching</li>
+                            <li>Staff Development & CPD Leadership</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Academic & Curriculum</h3>
+                        <ul class="skill-list">
+                            <li>Curriculum Design & Implementation</li>
+                            <li>Assessment & Data Analysis</li>
+                            <li>Cross-Cultural Pedagogy</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Technology & Innovation</h3>
+                        <ul class="skill-list">
+                            <li>AI in Education Strategy</li>
+                            <li>Educational Technology Integration</li>
+                            <li>Digital Literacy Program Development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Deputy Head Academic & Head of Digital Literacy</div>
+                            <div class="company">Windsor School Bahamas</div>
+                        </div>
+                        <div class="job-dates">April 2023 - Present</div>
+                    </div>
+                    <ul class="job-responsibilities">
+                        <li>Spearheaded a school-wide curriculum overhaul, aligning learning objectives with modern pedagogical standards and implementing progressive assessment reporting</li>
+                        <li>Pioneered the school's AI literacy program, designing and delivering professional development workshops that upskilled 50+ staff members in emerging technologies</li>
+                        <li>Drove parent engagement by creating and leading a successful workshop series on digital citizenship and AI, boosting family involvement in student learning</li>
+                        <li>Launched termly 'Stay and Share' events to enhance the home-school connection and provide parents with direct insight into student learning</li>
+                        <li>Supported colleagues in their professional development and mentoring them on the iPGCE program</li>
+                        <li>Continue to teach Digital Literacy, English, Humanities, Science, and Mathematics</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Head of English</div>
+                            <div class="company">Windsor School Bahamas</div>
+                        </div>
+                        <div class="job-dates">September 2021 - April 2023</div>
+                    </div>
+                    <ul class="job-responsibilities">
+                        <li>Revitalized the English curriculum for Years 1-6, introducing diverse new texts and pedagogical approaches to improve literary engagement</li>
+                        <li>Elevated the annual Book Week into a premier school event, featuring renowned local authors and securing key community partnerships</li>
+                        <li>Served as a form tutor while managing departmental responsibilities</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">KS2 Teacher</div>
+                            <div class="company">Windsor School Bahamas</div>
+                        </div>
+                        <div class="job-dates">August 2020 - September 2021</div>
+                    </div>
+                    <ul class="job-responsibilities">
+                        <li>Taught all core subjects as a form tutor, earning a rapid promotion to subject leadership based on performance and initiative</li>
+                        <li>Maintained strong communication with parents to keep them up to date with strengths and learning targets</li>
+                        <li>Led the class through the pandemic, being adaptive and resourceful in the face of adversities</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Year 2 Teacher</div>
+                            <div class="company">British School of Casablanca, Morocco</div>
+                        </div>
+                        <div class="job-dates">August 2019 - August 2020</div>
+                    </div>
+                    <ul class="job-responsibilities">
+                        <li>Taught all core subjects and provided targeted mathematics support to Year 5 students</li>
+                        <li>Contributed to the English curriculum working party and led staff wellbeing committee initiatives</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Primary Teacher & English Coordinator</div>
+                            <div class="company">Prague British International School, Czech Republic</div>
+                        </div>
+                        <div class="job-dates">August 2014 - August 2019</div>
+                    </div>
+                    <ul class="job-responsibilities">
+                        <li>Transformed Book Week from a single-day event into a comprehensive, themed week featuring author visits and book sales, significantly boosting the school's reading culture</li>
+                        <li>Held form teacher responsibilities for Years 2, 3, and 4 (2014-2018) before being promoted to English Coordinator (2018-2019)</li>
+                        <li>Wrote original scripts for year group productions and led multiple residential trips</li>
+                        <li>Led various extra-curricular activities, from story writing to photography</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Year 3 Form Tutor</div>
+                            <div class="company">The Study School, New Malden, UK</div>
+                        </div>
+                        <div class="job-dates">August 2012 - August 2014</div>
+                    </div>
+                    <ul class="job-responsibilities">
+                        <li>Taught core subjects, adapting lessons to meet needs of students with EAL and elective mutism</li>
+                        <li>Taught Music and French to students from Reception through Year 2, demonstrating subject versatility</li>
+                        <li>Involved in external sports fixtures and the running of the annual carol service and school play</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Supply Teacher</div>
+                            <div class="company">Various Schools, Kent, UK</div>
+                        </div>
+                        <div class="job-dates">2011 - 2012</div>
+                    </div>
+                    <ul class="job-responsibilities">
+                        <li>Gained valuable experience across various schools and year groups throughout Kent</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Key Achievements</h2>
+                <ul class="achievements-list">
+                    <li>
+                        <div class="achievement-title">AI Education Leadership</div>
+                        Pioneered a school-wide AI literacy program, delivering targeted training for staff, students, and parents to navigate emerging educational technology responsibly.
+                    </li>
+                    <li>
+                        <div class="achievement-title">Assessment Innovation</div>
+                        Drove comprehensive assessment reform by introducing progressive reporting methods and implementing regular 'Stay and Share' events that significantly improved parent engagement.
+                    </li>
+                    <li>
+                        <div class="achievement-title">Enhanced Literary Engagement</div>
+                        Transformed traditional book days into comprehensive themed Book Weeks at two international schools, securing high-profile visiting authors and establishing valuable partnerships with local literary communities.
+                    </li>
+                    <li>
+                        <div class="achievement-title">Curriculum Development</div>
+                        Led a systematic curriculum review and redesign process, ensuring alignment with contemporary educational standards and diverse student needs.
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="two-column">
+                <div class="section">
+                    <h2>Education</h2>
+                    <ul class="qualifications-list">
+                        <li>
+                            <span class="qual-name">NPQLT</span>
+                            <span class="qual-detail">2023</span>
+                        </li>
+                        <li>
+                            <span class="qual-name">PGCE (7-14) with MFL</span>
+                            <span class="qual-detail">Canterbury Christ Church University, 2011</span>
+                        </li>
+                        <li>
+                            <span class="qual-name">BA (Hons) French, 2:1</span>
+                            <span class="qual-detail">University of Kent, 2008</span>
+                        </li>
+                    </ul>
+                    
+                    <h2 style="margin-top: 25px;">Additional Qualifications</h2>
+                    <ul class="qualifications-list">
+                        <li>
+                            <span class="qual-name">Safeguarding Training</span>
+                            <span class="qual-detail">Annual TES Educare</span>
+                        </li>
+                        <li>
+                            <span class="qual-name">First Aid Qualified</span>
+                            <span class="qual-detail">Current (Bahamas)</span>
+                        </li>
+                        <li>
+                            <span class="qual-name">AI Certifications</span>
+                            <span class="qual-detail">Multiple Generative AI</span>
+                        </li>
+                        <li>
+                            <span class="qual-name">Language Skills</span>
+                            <span class="qual-detail">French (Degree), German (A-level)</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h2>Interests & Community Engagement</h2>
+                    <div class="interests-text">
+                        <strong>Photography:</strong> Serve as the official photographer for all school events and as a paid sports photographer for a local gymnastics organization.
+                        <br><br>
+                        <strong>Community Outreach:</strong> Volunteer with the Bahamas Humane Society and collaborate with local primary schools on educational initiatives.
+                        <br><br>
+                        <strong>Travel:</strong> Visiting different countries and cultures with my family.
+                        <br><br>
+                        <strong>Music:</strong> Listening to a wide range, from opera to metal, and attending concerts whenever possible.
+                        <br><br>
+                        <strong>Reading:</strong> Balancing fiction and non-fiction texts on eclectic topics.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section" style="text-align: center; padding: 20px; background: #f8f9fa; border-radius: 5px; margin-top: 30px;">
+                <strong>References available upon request</strong>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
